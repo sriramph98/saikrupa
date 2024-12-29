@@ -1,0 +1,59 @@
+<header class="header">
+    <div class="header-container">
+        <div class="left-section">
+            <div class="logo-nav-group">
+                <a href="/">
+                    <img src="/assets/saikrupa-logo.png" alt="Sai Krupa Gas Agency" class="logo">
+                </a>
+                <div class="nav-pills desktop-only">
+                    <a href="/#about" class="nav-pill">About</a>
+                    <a href="/#Contact" class="nav-pill">Contact</a>
+                    <a href="/#services" class="nav-pill">Services</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="nav-section">
+            <a href="https://my.ebharatgas.com/bharatgas/QuickBook/BookAndPay?source=MB" target="_blank"
+                class="book-now-btn desktop-only">
+                Book Now
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+    </div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="/#about" class="mobile-nav-link">About</a>
+            <a href="/#Contact" class="mobile-nav-link">Contact</a>
+            <a href="/#services" class="mobile-nav-link">Services</a>
+            <a href="tel:+919841537575" class="mobile-nav-link highlight">Book Now</a>
+        </div>
+    </div>
+</header>
+
+<script>
+    function toggleMenu() {
+        const mobileNav = document.querySelector('.mobile-nav');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+
+        if (mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            menuBtn.querySelector('.material-icons').textContent = 'menu';
+        } else {
+            mobileNav.classList.add('active');
+            menuBtn.querySelector('.material-icons').textContent = 'close';
+        }
+    }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            mobileNav.classList.remove('active');
+            menuBtn.querySelector('.material-icons').textContent = 'menu';
+        });
+    });
+</script>

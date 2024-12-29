@@ -1,0 +1,18 @@
+saikrupa
+========
+
+This repo follows FLUT (File-Lighttpd-Unix-Text) stack.
+
+Build Dependencies
+------------------
+* entr - for updating the browser when files change
+* an http server - 'darkhttpd . --port 8000'
+
+Build
+-----
+Type `make` to run the repo.
+
+
+Deploy
+------
+Type `make deploy` to deploy to server.

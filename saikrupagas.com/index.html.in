@@ -1,0 +1,454 @@
+include(`head.html')
+
+<body>
+    include(`header.html')
+
+    <div class="content">
+
+        <!-- Emergency number -->
+        include(`components/emergency-cta.html')
+
+        <!-- Hero -->
+        <header class="min-h-screen relative flex items-center py-32 px-8" id="home">
+            <div
+                class="hero-bg absolute inset-0 bg-[url('/assets/herobackground.jpg')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 ease-out">
+            </div>
+            <div class="relative z-10 w-full">
+                <div class="section-container w-full flex items-center">
+                    <div class="flex flex-col w-full md:flex-row items-center">
+                        <div class="flex-1 md:pr-16 space-y-6 w-full hero-text" style="opacity: 0;">
+                            <p class="text-sm text-[#1d80c3] font-medium">Trusted by 36,000+ customers</p>
+                            <div class="space-y-2">
+                                <h1 style="font-weight: 400;">Welcome to <span class="font-bold">Sai
+                                        Krupa<br>Gas Agency</span></h1>
+                                <p class="text-sm text-gray-900">Jafferkhanpet, Chennai</p>
+                            </div>
+                            <p>
+                                With over 40 years of expertise in the field of LPG, we serve our customers with the
+                                best possible experience.
+                            </p>
+                            <div class="flex gap-6 justify-center md:justify-start">
+                                <a href="https://apps.apple.com/in/app/hello-bpcl/id594797915" target="_blank">
+                                    <img width="120px" src="/assets/App-Store.png" alt="App Store">
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.cgt.bharatgas&hl=en_IN&gl=US"
+                                    target="_blank">
+                                    <img width="120px" src="assets/Google-Store.png" alt="Google Play">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-1 flex justify-center items-center md:pl-8 mt-8 md:mt-0 hero-image"
+                            style="opacity: 0;">
+                            <div class="w-full max-w-[500px]">
+                                <img class="w-full object-cover rounded-xl parallax-img" src="/assets/heroImage.webp"
+                                    alt="Sai Krupa Gas Agency">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Us -->
+        <section id="about" class="defaultMargin animate-on-scroll" style="opacity: 0;">
+            <div class="section-container">
+                <div style="padding: 32px; width: 100%;">
+                    <div class="about-section-container"
+                        style="display: flex; align-items: center; gap: 48px; width: 100%;">
+                        <div style="flex: 1; text-align: center;">
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
+                                <div class="lottie-container" style="width: 64px; height: 64px;">
+                                    <lottie-player src="/assets/icons/SpaFlower.json" background="transparent" speed="1"
+                                        loop autoplay>
+                                    </lottie-player>
+                                </div>
+                                <h2>Your Reliable LPG Gas Distributor<br> in Chennai</h2>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div
+                                style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
+                                <video id="bharatVideo"
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                                    autoplay muted loop playsinline>
+                                    <source src="/assets/videos/Bharatgas.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <button id="muteToggle" onclick="toggleMute()"
+                                    style="position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.6); border: none; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
+                                    <span class="material-icons"
+                                        style="color: white; font-size: 20px;">volume_off</span>
+                                </button>
+                                <script>
+                                    let isMuted = true;
+
+                                    function toggleMute() {
+                                        const video = document.getElementById('bharatVideo');
+                                        const muteBtn = document.getElementById('muteToggle').querySelector('span');
+                                        if (isMuted) {
+                                            video.muted = false;
+                                            muteBtn.textContent = 'volume_up';
+                                        } else {
+                                            video.muted = true;
+                                            muteBtn.textContent = 'volume_off';
+                                        }
+                                        isMuted = !isMuted;
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Bharatgas -->
+        <section class="defaultMargin animate-on-scroll" style="opacity: 0;">
+            <div class="section-container">
+                <div
+                    class="border-b border-[rgba(0,0,0,0.14)] hover:border-[rgba(0,0,0,0.3)] transition-colors duration-200">
+                    <button class="w-full py-6 text-left flex justify-between items-center focus:outline-none"
+                        onclick="toggleCollapse('aboutBharatgas')">
+                        <div>
+                            <h3>About Bharatgas</h3>
+                            <p class="text-black/60">Fueling India's Growth Since 1954</p>
+                        </div>
+                        <span class="material-icons transform transition-transform duration-200 text-gray-500"
+                            id="aboutBharatgasIcon">
+                            add
+                        </span>
+                    </button>
+                    <div id="aboutBharatgas" class="hidden transition-all duration-300 ease-in-out overflow-hidden">
+                        <div>
+                            <p>Bharatgas from Bharat Petroleum has been a trusted leader in India's LPG market, serving
+                                over 25 million homes daily.
+                                From households enjoying their morning tea to industries powering operations, Bharatgas
+                                ensures reliability and safety.
+                            </p><br>
+                            <p>Pioneering innovation, Bharatgas offers:</p><br>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>Easy Access:</strong> Online ordering and doorstep delivery.</li>
+                                <li><strong>Piped LPG:</strong> Supply to residential complexes.</li>
+                                <li><strong>Rural Reach:</strong> "Rural Marketing Vehicle" for remote areas.</li>
+                                <li><strong>Industrial Solutions:</strong> Bharat Metal Cutting Gas for cutting-edge
+                                    efficiency.</li>
+                            </ul><br <p>At Bharatgas, we fuel India's homes and businesses with unmatched service and
+                            innovation.</p><br>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-b border-[rgba(0,0,0,0.14)] hover:border-[rgba(0,0,0,0.3)] transition-colors duration-200">
+                    <button class="w-full py-6 text-left flex justify-between items-center focus:outline-none"
+                        onclick="toggleCollapse('aboutSaiKrupa')">
+                        <div>
+                            <h3>About Sai Krupa</h3>
+                            <p class="text-black/60">Serving Chennai Since 1984</p>
+                        </div>
+                        <span class="material-icons transform transition-transform duration-200 text-gray-500"
+                            id="aboutSaiKrupaIcon">
+                            add
+                        </span>
+                    </button>
+                    <div id="aboutSaiKrupa" class="hidden transition-all duration-300 ease-in-out overflow-hidden">
+                        <div class="pb-6 text-gray-600 space-y-4">
+                            <p>
+                                Since 1984, Sai Krupa Gas Agency has been a leading Bharat Gas distributor in Ashok
+                                Nagar,
+                                Chennai.
+                                As a trusted establishment, we serve customers from across Chennai with dedication and
+                                excellence.
+                            </p>
+
+                            <p>
+                                Customer satisfaction is at the heart of everything we do. Our team of dedicated
+                                professionals
+                                works tirelessly to achieve our vision of providing exceptional service. This commitment
+                                has
+                                helped
+                                us build a growing customer base that continues to expand.
+                            </p>
+
+                            <p>
+                                Looking ahead, we aim to enhance our product offerings and services to serve an even
+                                broader
+                                clientele. Our strategic location at Inner Ring Road, near BSNL Telephone Exchange, 15th
+                                Avenue,
+                                makes us easily accessible to all our customers. The convenient location, coupled with
+                                various
+                                available transport options, ensures a hassle-free visit for both new and existing
+                                customers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Aadhaar Banner -->
+        <section class="defaultMargin animate-on-scroll" style="opacity: 0;">
+            <div class="section-container">
+                <div class="bg-[#1d80c3]/10 rounded-lg px-8 py-6 flex items-center gap-6">
+                    <div class="flex-shrink-0">
+                        <img src="/assets/icons/aadhar.png" alt="Aadhaar Logo" class="w-16 h-16">
+                    </div>
+                    <div>
+                        <h4>Link Your Aadhaar to get LPG subsidy into your bank account</h4>
+                        <p>Stay compliant and receive your subsidies directly
+                            in your
+                            bank account.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="defaultMargin animate-on-scroll" style="opacity: 0;" id="Contact">
+            <div class="section-container">
+                <div class="text-center w-full" style="margin-bottom: 32px;">
+                    <h2>Let's Talk</h2>
+                    <p>Need support or have a question about our service? We're here to help.</p>
+                </div>
+
+                <div class="direction" style="
+                    align-items: center;
+                    gap: 32px;
+                    align-self: stretch;">
+                    <div class="card" style="align-items: flex-start; flex: 1;">
+                        <img width="64" height="64" src="https://img.icons8.com/3d-fluency/94/office-phone.png"
+                            alt="office-phone" />
+                        <div style="display: flex;
+                                     flex-direction: column;
+                                     align-items: flex-start;
+                                     gap: 8px;
+                                     align-self: stretch;">
+                            <div style="display: flex; flex-direction: column; gap: 4px;">
+                                <h3>Phone</h3>
+                                <p>From home to business, we've got you covered.</p>
+                            </div>
+                            <div style="width: 100%;">
+                                <a href="tel:+919841537575" class="contact-link">
+                                    Call Us
+                                    <span class="material-icons"
+                                        style="font-family: 'Material Icons' !important;">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="align-items: flex-start; flex: 1;">
+                        <img width="64" height="64" src="https://img.icons8.com/3d-fluency/94/mail.png" alt="mail" />
+                        <div style="display: flex;
+                                     flex-direction: column;
+                                     align-items: flex-start;
+                                     gap: 8px;
+                                     align-self: stretch;">
+                            <div style="display: flex; flex-direction: column; gap: 4px;">
+                                <h3>Email</h3>
+                                <p>Got questions? Drop us an email and ignite your journey!</p>
+                            </div>
+                            <div style="width: 100%;">
+                                <a href="mailto:saikrupabharatgas@gmail.com" class="contact-link">
+                                    Contact Support
+                                    <span class="material-icons"
+                                        style="font-family: 'Material Icons' !important;">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section class="defaultMargin animate-on-scroll" style="align-items: flex-start;gap: 48px; opacity: 0;">
+            <div class="section-container">
+                <div class="direction reverse" style=" align-items: center; flex-wrap: wrap; gap: 64px;">
+                    <div style="flex: 1; display: flex; justify-content: center; width: 80%;">
+                        <img style="max-width: 100%; height: auto; border-radius: 12px; background: #FFF; box-shadow: 0px 51px 80px 0px rgba(29, 128, 195, 0.08), 0px 21.307px 33.422px 0px rgba(29, 128, 195, 0.06), 0px 11.392px 17.869px 0px rgba(29, 128, 195, 0.05), 0px 6.386px 10.017px 0px rgba(29, 128, 195, 0.04), 0px 3.392px 5.32px 0px rgba(29, 128, 195, 0.03), 0px 1.411px 2.214px 0px rgba(29, 128, 195, 0.02);"
+                            src="/assets/mapimage.webp">
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-end; gap: 24px;"
+                        class="location-content">
+                        <div style="gap: 16px; text-align: right;" class="location-text">
+                            <h2>Location</h2>
+                            <p>Our office is conveniently located in the heart of the city for your easy access
+                                and service</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/YaAP2N4X33u7mY1k6" target="_blank">
+                            <button class="CTA">Get Directions</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Useful Links -->
+        <section id="services" class="defaultMargin animate-on-scroll" style="opacity: 0;">
+            <div class="section-container">
+                <div style="display: flex;flex-direction: column;gap: 48px;">
+                    <h2 class="mb-4">Useful Links</h2>
+                    <div class="cards-container">
+                        <a href="https://my.ebharatgas.com/bharatgas/LPGServices/FillKYCForm?distributorCode=110809&districtCode=1908&stateCode=19"
+                            target="_blank">
+                            <div class="btnCard">
+                                <img width="48px" src="/assets/icons/add.svg">
+                                <h3>Register for a new connection</h3>
+                            </div>
+                        </a>
+
+                        <a href="https://my.ebharatgas.com/bharatgas/QuickBook/BookAndPay?source=MB" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="48px" src="/assets/icons/quickpay.svg">
+                                <h3>Quick Pay</h3>
+                            </div>
+                        </a>
+
+                        <a href="https://my.ebharatgas.com/bharatgas/QuickBook/DBC" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="48px" src="/assets/icons/secondcylinder.svg">
+                                <h3>Register for second connection</h3>
+                            </div>
+                        </a>
+
+                        <!-- <a href="">
+                            <div class="btnCard">
+                            <img width="48px" src="/assets/icons/home.svg">
+                            <h3>Address Change</h3>
+                            </div></a> -->
+
+                        <a href="https://my.ebharatgas.com/bharatgas/UpdateContactNumber/Index" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="48px" src="/assets/icons/changemobile.svg">
+                                <h3>Change Mobile Number</h3>
+                            </div>
+                        </a>
+
+                        <!-- <a href="">
+                                <div class="btnCard">
+                                <img width="48px" src="/assets/icons/mechanic.svg">
+                                <h3>Mechanic Service</h3>
+                                </div></a> -->
+
+                        <a href="https://my.ebharatgas.com/bharatgas/LPGServices/Index" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="48px" src="/assets/icons/otherservice.svg">
+                                <h3>Other Services</h3>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Book Refill -->
+        <section class="defaultMargin animate-on-scroll" style="opacity: 0;">
+            <div class="section-container">
+                <div style="display: flex;flex-direction: column;gap: 48px;">
+                    <h2 class="mb-4">Book Refill</h2>
+                    <div class="cards-container">
+                        <a href="https://www.amazon.in/hfc/bill/lpg" target="_blank">
+                            <div class="btnCard">
+                                <img width="80px" src="/assets/icons/amazon.svg">
+                                <h3>Amazon</h3>
+                            </div>
+                        </a>
+
+                        <a href="https://gpay.app.goo.gl/Bharatgas" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="80px" src="/assets/icons/gpay.svg">
+                                <h3>GPay</h3>
+                            </div>
+                        </a>
+
+                        <a href="https://www.phonepe.com/" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="80px" src="/assets/icons/phonepe.svg">
+                                <h3>PhonePe</h3>
+                            </div>
+                        </a>
+
+                        <a href="tel:+919841537575">
+                            <div class="btnCard">
+                                <img width="80px" src="/assets/icons/phone.svg">
+                                <h3>Call Us</h3>
+                            </div>
+                        </a>
+
+
+                        <a href="https://api.whatsapp.com/send/?phone=919841537575" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="80px" src="/assets/icons/whatsapp.svg" alt="WhatsApp" loading="lazy">
+                                <h3>Whatsapp</h3>
+                            </div>
+                        </a>
+
+
+                        <a href="https://paytm.com/cylinder-gas-recharge/bharatgas" target=”_blank”>
+                            <div class="btnCard">
+                                <img width="80px" src="/assets/icons/paytm.svg">
+                                <h3>PayTM</h3>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Awards & Recognition -->
+        <!-- <section class="defaultMargin">
+            <div style="display: flex; flex-direction: column; gap: 48px;">
+            <h1 style="text-align: center;">Awards & Recognition</h1>
+            <div>
+
+            <div class="awardCardContainer direction" style="display: flex; gap: 48px; flex-wrap: wrap;">
+            <div class="awardCard" style="flex: 1;">
+            <img src="/assets/award.webp" style="width: 100%; height: auto; max-height: 320px; object-fit: cover;">
+            </div>
+            <div class="awardCard" style="flex: 1;">
+            <img src="/assets/award.webp" style="width: 100%; height: auto; max-height: 320px; object-fit: cover;">
+            </div>
+            <div class="awardCard" style="flex: 1;">
+            <img src="/assets/award.webp" style="width: 100%; height: auto; max-height: 320px; object-fit: cover;">
+            </div>
+            </div>
+            </div>
+            </section> -->
+
+
+    </div>
+
+    </div>
+
+    include(`footer.html')
+
+    <script>
+        function toggleCollapse(elementId) {
+            const content = document.getElementById(elementId);
+            const icon = document.getElementById(elementId + 'Icon');
+            const container = content.parentElement;
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.textContent = 'remove';
+                container.classList.remove('border-[rgba(0,0,0,0.14)]');
+                container.classList.add('border-[rgba(0,0,0,0.3)]');
+            } else {
+                content.classList.add('hidden');
+                icon.textContent = 'add';
+                container.classList.remove('border-[rgba(0,0,0,0.3)]');
+                container.classList.add('border-[rgba(0,0,0,0.14)]');
+            }
+        }
+    </script>
+</body>
